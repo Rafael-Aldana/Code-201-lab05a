@@ -9,11 +9,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-
+  let mySum = (a + b);
+  let answerString = `The sum of ${a} and ${b} is ${mySum}.`;
+  let answer = [mySum, answerString];
+  return answer;
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+ testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -27,11 +30,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+  let myProduct = (a * b);
+  let answerString = `The product of ${a} and ${b} is ${myProduct}.`
+  let answer = [myProduct, answerString];
+  return answer;
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+ testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -48,11 +54,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  let firstSum = sum(a, b)[0];
+  let mySum = sum(firstSum, c)[0];
+  let firstProduct = multiply(a, b)[0];
+  let myProduct = multiply(firstProduct, c)[0];
+  let stringOne = `${a} and ${b} and ${c} sum to ${mySum}.`;
+  let stringTwo = `The product of ${a} and ${b} and ${c} is ${myProduct}.`;
+  let answer = [mySum, myProduct, stringOne, stringTwo];
+  return answer;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -70,7 +83,10 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+  let firstSum = sum(sumArr[0], sumArr[1])[0];
+  let mySum = sum(firstSum, sumArr[2])[0];
+  let stringAnswer = `${sumArr} was passed in as an array of numbers, and ${mySum} is their sum.`;
+  return [mySum, stringAnswer];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
